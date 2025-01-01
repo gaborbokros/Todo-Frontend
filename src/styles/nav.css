@@ -1,0 +1,18 @@
+nav {
+    width: 100%;
+    background: var(--background);
+    box-shadow: var(--floating-shadow);
+    padding: 0px 50px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+/* TEMPORARY */
+nav p {
+    padding: 30px 0px;
+    letter-spacing: 50px;
+    font-style: italic;
+    opacity: 0.5;
+}
+
