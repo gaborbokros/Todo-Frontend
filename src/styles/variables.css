@@ -1,0 +1,13 @@
+:root {
+    /* Color */
+    --font-color: #33313B;
+    --background: #F9F9F9;
+    --primary: #4592AF;
+    --secondary: #E3C4A8;
+
+    /* Shadow */
+    --floating-shadow: 12px 12px 12px rgba(0,0,0,0.1), -10px -10px 10px white;
+
+    /* Font */
+    --font: 'Arial', 'sans-serif'
+}
