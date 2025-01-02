@@ -120,11 +120,10 @@ main {
         padding: 30px;
     }
 
-    main .tasks {
-        flex: 1;
-      }
+    main .tasks { flex: 1 }
 
     main .task-details {
+        display: none;
         box-shadow: var(--floating-shadow-reverse);
         width: 500px;
     }
