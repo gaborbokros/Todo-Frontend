@@ -1,27 +1,130 @@
-@import url('./variables.css');
-@import url('./nav.css');
-@import url('./main.css');
+/* VARIABLES */
+:root {
+    /* Color */
+    --font-color: #33313B;
+    --background: #F9F9F9;
+    --primary: #4592AF;
+    --secondary: #E3C4A8;
 
+    /* Shadow */
+    --floating-shadow: 12px 12px 12px rgba(0,0,0,0.1), -10px -10px 10px white;
+    --floating-shadow-reverse: -12px -12px 12px rgba(0,0,0,0.1), 10px 10px 10px white;
+    --deepened-shadow: 12px 12px 12px rgba(0,0,0,0.1) inset, -10px -10px 10px white inset;
+
+    /* Font */
+    --font: 'Arial', 'sans-serif'
+}
+
+/* DEFAULT */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: var(--font)
-}
-
-body {
-    background: var(--background);
-    color: var(--font-color);
-    height: 100vh;
-    width: 100%;
-    
-    position: fixed;
-    
-    display: flex;
-    flex-direction: column;
+    font-family: var(--font);
+    user-select: none;
 }
 
 a {
     color: var(--font-color);
     text-decoration: none;
 }
+
+body {
+    background: var(--background);
+    color: var(--font-color);
+    height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAV */
+nav {
+    z-index: 1000;
+    background: var(--background);
+}
+
+.top-nav {
+    box-shadow: var(--floating-shadow);
+    padding: 0px 50px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+    .top-nav .logo {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 20px 0px;
+    }
+
+        .top-nav .logo img { width: 50px }
+
+    .top-nav .nav-links {
+        display: flex;
+        gap: 40px;
+    }
+
+        .top-nav .nav-links a { padding: 30px 0px 20px }
+
+        .top-nav .nav-links a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 3px;
+            background: var(--primary);
+            transition: width 0.3s;
+            margin-top: 10px;
+        }
+
+        .top-nav .nav-links a:hover::after { width: 100% }
+
+.bottom-nav {
+    box-shadow: var(--floating-shadow-reverse);
+    border-radius: 24px 24px 0px 0px;
+    overflow: hidden;
+
+    display: none;
+    justify-content: center;
+}
+
+    .bottom-nav a {
+        width: 33%;
+        display: flex;
+        justify-content: center;
+        padding: 30px 0px;
+    }
+
+        .bottom-nav a i { font-size: 20px }
+
+@media screen and (max-width: 600px) {
+    .top-nav { justify-content: center }
+        .top-nav .nav-links { display: none }
+    
+    .bottom-nav { display: flex }
+}
+
+/* MAIN */
+main {
+    position: relative;
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+    main .tasks, main .task-details {
+        height: 100%;
+        overflow: auto;
+        padding: 30px;
+    }
+
+    main .tasks {
+        flex: 1;
+      }
+
+    main .task-details {
+        box-shadow: var(--floating-shadow-reverse);
+        width: 500px;
+    }

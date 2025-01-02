@@ -11,20 +11,41 @@
     <script src="./src/app.js" type="module" defer></script>
 </head>
 <body>
-    <nav>
+    <nav class="top-nav">
         <div class="logo">
-            <p>LOGO</p>
+            <img src="./public/img/icon.png" alt="logo">
+            <h1>Todo</h1>
         </div>
         <div class="nav-links">
-            <p>LINKS</p>
+            <a href="#today">
+                <span>Today</span>
+            </a>
+            <a href="#important">
+                <span>Important</span>
+            </a>
+            <a href="#planned">
+                <span>Planned</span>
+            </a>
+        </div>
     </nav>
     <main>
         <div class="tasks">
             <p>TASKS</p>
         </div>
-        <div class="taskDetails">
+        <div class="task-details">
             <p>TASK DETAILS</p>
         </div>
     </main>
+    <nav class="bottom-nav">
+        <a href="#today">
+            <i class="fa-regular fa-sun"></i>
+        </a>
+        <a href="#important">
+            <i class="fa-regular fa-star"></i>
+        </a>
+        <a href="#planned">
+            <i class="fa-regular fa-calendar"></i>
+        </a>
+    </nav>
 </body>
 </html>

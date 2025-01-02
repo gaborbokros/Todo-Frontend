@@ -1,1 +1,1 @@
-console.log('Hello, World!');
+import "https://kit.fontawesome.com/f481213ebd.js"
