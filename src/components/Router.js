@@ -1,4 +1,6 @@
-export default class Router {
+const tasksContainer = document.querySelector('.tasks');
+
+class Router {
     routes = {};
 
     constructor() {
@@ -11,14 +13,21 @@ export default class Router {
     }
 
     checkHashChange() {
-        window.addEventListener("hashchange", () => this.routeByHash());
+        window.addEventListener("hashchange", () => this.renderView());
         return this;
     }
 
     routeByHash() {
-        this.location = window.location.hash;
-        let route = this.routes[this.location] || this.routes['#404'];
-        route.renderView()
+        const location = window.location.hash; 
+        if(location === '') return this.routes['#today'];
+        return this.routes[location] || this.routes['#404'];
+    }
+
+    renderView() {
+        const route = this.routeByHash();
+        tasksContainer.innerHTML = route.getView();
         return this;
     }
 }
+
+export default new Router()
